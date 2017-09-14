@@ -1,0 +1,11 @@
+﻿<Application x:Class="SlantWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SlantWPF"
+             StartupUri="UI/MainWindow.xaml">
+    <Application.Resources>
+
+        <BitmapImage x:Key="slanticon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="Resources/slant.ico"/>
+
+    </Application.Resources>
+</Application>
