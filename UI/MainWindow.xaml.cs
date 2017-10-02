@@ -367,7 +367,12 @@ namespace SlantWPF.UI
                     return;
             }
             Point pt = e.GetPosition(gamePanel);
-            int x = (int)(pt.X - NumRingSize / 2d) / FieldSize, y = (int)(pt.Y - NumRingSize / 2d) / FieldSize;
+            pt.Offset(-NumRingSize / 2d, -NumRingSize / 2d);
+            if (pt.X <= 0 || 
+                pt.Y <= 0 || 
+                pt.X >= Game.Width * FieldSize || 
+                pt.Y >= Game.Height * FieldSize) return;
+            int x = (int)pt.X / FieldSize, y = (int)pt.Y / FieldSize;
             checker.removeLineError(x, y);
             Game.toggle(x, y, cnt);
             checker.checkError(x, y);
